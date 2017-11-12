@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Maths {
 
     public static void main(String[] args) throws IOException {
-        private int sum, sub, mult, numberA, numberB;
+       int sum, sub, mult, numberA, numberB;
 
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter your number: ");
