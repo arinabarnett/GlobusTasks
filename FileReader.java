@@ -1,26 +1,40 @@
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
 
-public class FileReader {
-    public static void main(String[] args) {
-        File file = new File("C:\NewTextFile.txt");
-        if (!file.exists()) {
-            System.out.println(args[0] + " does not exist.");
-            return;
+public class FileReader{
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        String str = new String();
+        ArrayList<String> list = new ArrayList<String>();
+
+        System.out.println("Type '1' to terminate input");
+
+        while(!(str = sc.nextLine()).equals("1")) {
+            list.add(str);
         }
-        if (!(file.isFile() && file.canRead())) {
-            System.out.println(file.getName() + " cannot be read from.");
-            return;
+        sc.close();
+
+        File fd = new File("C:\NewFiles.txt");
+        if(!fd.exists())
+            fd.createNewFile();
+
+        PrintWriter pw = new PrintWriter(fd);
+        for(String val: list)
+            pw.append(val + "\n");
+        pw.flush();
+
+        System.out.println("Content of file " + fd.getName());
+
+        list.clear();
+        Scanner fw = new Scanner(fd);
+        while(fw.hasNextLine()) {
+            list.add(fw.nextLine());
         }
-        try {
-            FileInputStream fis = new FileInputStream(file);
-            char current;
-            while (fis.available() > 0) {
-                current = (char) fis.read();
-                System.out.print(current);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        fw.close();
+
+        for(String val: list)
+            System.out.println(val);
     }
+}
