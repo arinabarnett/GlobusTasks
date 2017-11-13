@@ -1,35 +1,48 @@
-
 public class Shape {
     public static void main(String args[]) {
-        int radius, side1, side2, side3;
-        double area;
+    int radius;
+    double width;
+    double height;
     }
 }
 
-abstract class Circle extends Shape {
-    public static void area()
-    {
-        int radius = 6;
-        double area = Math.PI * ( radius * radius );
-        System.out.println("Площадь круга равна: " + area );
+class Traingle extends Shape {
+    double.area() {
+        return width * height / 2;
+    }
+
+    class Shapes {
+        public static void main(String args[]){
+            Traingle t1 = new Traingle();
+            t.width = 6.0;
+            t.height = 4.0;
+            System.out.println("Площадь треугольника: " + t.area());
+        }
+    }
+
+    class Rectangle extends Shape {
+        double.area() {
+            return width * height;
+        }
+
+        class Shapes2  {
+        public static void main(String args[]){
+        Rectangle t1 = new Rectangle();
+        r.width = 5.0;
+        r.height = 8.0;
+            System.out.println("Площадь прямоугольника: " + r.area());
     }
 }
 
-abstract class RightTraingle extends Shape {
-    public static void area()
-    {
-        int side1 = 2;
-        int side2 = 4;
-        double area = ( side1 * side2 / 2 );
-        System.out.println("Площадь прямоугольного треугольника равна: " + area );
-    }
+class Circle extends Shape {
+      double.area() {
+      return Math.PI * (radius * radius); }
 }
 
-abstract class Square extends Shape {
-    public static void area()
-    {
-        int side3 = 5;
-        double area = (side3 * 2);
-        System.out.println("Площадь квадрата: " + area);
-    }
+class Shapes3 {
+      public static void main(String args[])    {
+          Circle c1 = new Circle();
+          c.radius = 6;
+          System.out.println("Площадь круга: " + c.area());
+      }
 }
