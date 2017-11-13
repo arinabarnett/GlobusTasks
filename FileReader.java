@@ -16,7 +16,7 @@ public class FileReader{
         }
         sc.close();
 
-        File fd = new File("C:\NewFiles.txt");
+        File fd = new File("NewFiles.txt");
         if(!fd.exists())
             fd.createNewFile();
 
